@@ -12,6 +12,8 @@ class Runner {
         sorts << bubbleSort
         def quickSort = new QuickSort(100000)
         sorts << quickSort
+        def quickSortJava = new QuickSortJava(100000)
+        sorts << quickSortJava
         //def mergeSort = new MergeSort(100000)
         //sorts << mergeSort
         //def heapSort = new HeapSort(100000)
@@ -42,7 +44,7 @@ class Runner {
         (1..instanceSize).each {
             randomIntegerList << rand.nextInt((int)instanceSize+1)
         }
-        return randomIntegerList
+        return (Object)randomIntegerList
     }
 
     def printReport(SortMethod method){

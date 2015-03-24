@@ -5,7 +5,7 @@
 class BubbleSort extends SortMethod {
 
 
-    BubbleSort(int instanceSize){
+    BubbleSort(long instanceSize){
         def repo = new Report()
         repo.instanceSize = instanceSize
         this.report = repo

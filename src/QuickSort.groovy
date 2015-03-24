@@ -3,7 +3,7 @@
  */
 class QuickSort extends SortMethod {
 
-    QuickSort(int instanceSize){
+    QuickSort(long instanceSize){
         def repo = new Report()
         repo.instanceSize = instanceSize
         this.report = repo
@@ -17,15 +17,5 @@ class QuickSort extends SortMethod {
         def items = list.groupBy{ it <=> pivot}.withDefault{[]}
         sortM(items[-1])+items[0]+sortM(items[1])
 
-    }
-
-    static main(args){
-        def re = new Report()
-        re.instanceSize = 100000
-        def s = new QuickSort()
-        s.sortName = "Quick Sort"
-        s.report = re
-        println(s.timeSort())
-        //println(s.report.time = (double)timeSort())
     }
 }
