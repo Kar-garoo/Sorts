@@ -7,5 +7,5 @@ abstract class SortMethod {
     Report report
 
 
-    abstract  sortM(items)
+    abstract sortM(items)
 }

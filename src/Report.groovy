@@ -7,17 +7,14 @@ class Report {
     long comparasons
     double time
 
-    def generateList(){
-        def rand = new Random()
-        def randomIntegerList = []
-        (1..instanceSize).each {
-            randomIntegerList << rand.nextInt((int)instanceSize+1)
-        }
-        return randomIntegerList
-    }
+
 
     def addComparisons(k){
 
+    }
+
+    def report(){
+        def s = " Instance Size: $instanceSize \n Comparasons: $comparasons \n Execution Time: $time"
     }
 
 }

@@ -4,6 +4,14 @@
 
 class BubbleSort extends SortMethod {
 
+
+    BubbleSort(int instanceSize){
+        def repo = new Report()
+        repo.instanceSize = instanceSize
+        this.report = repo
+        this.sortName = "BubbleSort Groovy"
+    }
+
     def sortM(a) {
         for(out in (a.size()-2)..1)
         {
