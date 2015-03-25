@@ -8,4 +8,13 @@ class Report {
     double time
 
 
+
+    def addComparisons(k){
+
+    }
+
+    def report(){
+        def s = " Instance Size: $instanceSize \n Comparasons: $comparasons \n Execution Time: $time"
+    }
+
 }

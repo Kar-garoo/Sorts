@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MergeSortJava extends SortMethod {
 
-    public void sortM(ArrayList list){
-
+    public Object sortM(Object list){
+        return null;
     }
 
     public static void merge(ArrayList A, int p, int q, int r){
