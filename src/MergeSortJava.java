@@ -6,12 +6,17 @@ public class MergeSortJava extends SortMethod {
     public Object sortM(Object list){
         return null;
     }
+    public MergeSortJava(long instanceSize){
+        Report r = new Report();
+        r.setInstanceSize(instanceSize);
+        this.setReport(r);
+        this.setSortName("MergeSort Java");
+    }
 
-    public static void merge(ArrayList A, int p, int q, int r){
+    public static void merge(ArrayList <Integer> A, int p, int q, int r){
         int i = 0, j = 0;
-        ArrayList  L = (ArrayList) A.subList(p, q+1);
-        ArrayList  R = (ArrayList) A.subList(q+1, q+1);
-
+        ArrayList <Integer> L = (ArrayList<Integer>) A.subList(p, q + 1);
+        ArrayList <Integer> R = (ArrayList<Integer>) A.subList(q+1, q+1);
         for (int k = p; k < r+1 ; k++) {
             if( L.get(i) <= R.get(j) ){
                 A.remove(k);
@@ -25,7 +30,7 @@ public class MergeSortJava extends SortMethod {
         }
     }
 
-    public static void merge_sort_main(ArrayList A, int p, int r){
+    public static void merge_sort_main(ArrayList <Integer> A, int p, int r){
         int q;
         if (p < r){
             q = (p+r)/2;
@@ -35,13 +40,13 @@ public class MergeSortJava extends SortMethod {
         }
 
     }
-    public static void merge_sort(ArrayList A){
+    public static void merge_sort(ArrayList <Integer> A){
         merge_sort_main(A, 0, A.size()-1);
     }
 
 
     public static void main(String[] args) {
-        ArrayList B = new ArrayList();
+        ArrayList <Integer> B = new ArrayList <Integer> ();
         B.add(0, 2);
         B.add(0, 1);
         B.add(0, 7);
