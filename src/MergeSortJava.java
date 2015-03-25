@@ -13,10 +13,12 @@ public class MergeSortJava extends SortMethod {
 
         for (int k = p; k < r+1 ; k++) {
             if( L.get(i) <= R.get(j) ){
-                A[k] = L.get(i);
+                A.remove(k);
+                A.add(k, L.get(i));
                 i++;
             }else{
-                A.get(k) = R.get(j);
+                A.remove(k);
+                A.add(k, R.get(j));
                 j++;
             }
         }
