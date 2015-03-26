@@ -19,6 +19,7 @@ class HeapSort extends SortMethod{
             swap(a, 0, it)
             shiftDown(a, 0, it - 1)
         }
+        return a
     }
 
     def heapify(list) {
