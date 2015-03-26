@@ -14,7 +14,8 @@ class QuickSort extends SortMethod {
     def sortM(list){
         if(list.size()< 2) return list
         def pivot = list[0]
-        def items = list.groupBy{ it <=> pivot}.withDefault{[]}
+        def items = list.groupBy{ it <=> pivot }.withDefault{[]}
+        this.report.addComparisons(3)
         sortM(items[-1])+items[0]+sortM(items[1])
 
     }

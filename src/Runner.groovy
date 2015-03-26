@@ -8,7 +8,7 @@ class Runner {
         def r = new Runner()
         def sorts = []
 
-        def bubbleSort = new BubbleSort(10000)
+        def bubbleSort = new BubbleSort(2)
         sorts << bubbleSort
         def quickSort = new QuickSort(100000)
         sorts << quickSort
@@ -16,8 +16,9 @@ class Runner {
         sorts << quickSortJava
         //def mergeSort = new MergeSort(100000)
         //sorts << mergeSort
-        //def heapSort = new HeapSort(100000)
-        //sorts << heapSort
+        def heapSort = new HeapSort(100000)
+        sorts << heapSort
+
 
         sorts.each {
             r.timeSort(it)

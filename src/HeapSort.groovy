@@ -10,7 +10,7 @@ class HeapSort extends SortMethod{
         this.sortName = "HeapSort Groovy"
     }
     def sortM(a) {
-        size = a.size()
+        def size = a.size()
         if (size < 2) {
             return a
         }
@@ -22,8 +22,8 @@ class HeapSort extends SortMethod{
     }
 
     def heapify(list) {
-        size = list.size()
-        parent = (int)size / 2 - 1
+        def size = list.size()
+        def parent = (int)size / 2 - 1
 
         while (parent >= 0) {
             shiftDown(list, parent--, size - 1)
@@ -34,9 +34,9 @@ class HeapSort extends SortMethod{
         def parent = first
 
         while (parent * 2 + 1 <= last) {
-            left = parent * 2 + 1
-            right = left + 1
-            max = parent
+            def left = parent * 2 + 1
+            def right = left + 1
+            def max = parent
 
             if (list[left] > list[max]) {
                 max = left

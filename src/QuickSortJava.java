@@ -25,7 +25,7 @@ public class QuickSortJava extends  SortMethod{
         return null;
     }
 
-    public static void quicksort(Integer A[], int izq, int der) {
+    public  void quicksort(Integer A[], int izq, int der) {
 
         int pivote=A[izq]; // tomamos primer elemento como pivote
         int i=izq; // i realiza la búsqueda de izquierda a derecha
@@ -39,6 +39,7 @@ public class QuickSortJava extends  SortMethod{
                 aux= A[i];                  // los intercambia
                 A[i]=A[j];
                 A[j]=aux;
+                this.getReport().addComparisons(3);
             }
         }
         A[izq]=A[j]; // se coloca el pivote en su lugar de forma que tendremos

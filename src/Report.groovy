@@ -9,8 +9,8 @@ class Report {
 
 
 
-    def addComparisons(k){
-
+    def addComparisons(long k){
+        comparasons = comparasons+k
     }
 
     def report(){
