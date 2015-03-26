@@ -1,12 +1,16 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
+
 
 public class MergeSortJava extends SortMethod {
 
     public Object sortM(Object list){
+        ArrayList<Integer>s = (ArrayList<Integer>)list;
+        System.out.println(s.toString());
+        merge_sort(s);
         return null;
     }
+
+
     public MergeSortJava(long instanceSize){
         Report r = new Report();
         r.setInstanceSize(instanceSize);
@@ -41,6 +45,7 @@ public class MergeSortJava extends SortMethod {
             merge_sort_main(A, p, q);
             merge_sort_main(A, q+1, r);
             merge( A, p, q, r );
+
         }
 
     }

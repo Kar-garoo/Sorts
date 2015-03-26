@@ -8,22 +8,24 @@ class Runner {
         def r = new Runner()
         def sorts = []
 
-        def bubbleSort = new BubbleSort(100)
+        def bubbleSort = new BubbleSort(1)
         sorts << bubbleSort
-        def quickSort = new QuickSort(100000)
+        def quickSort = new QuickSort(10)
         sorts << quickSort
-        def quickSortJava = new QuickSortJava(100000)
+        def quickSortJava = new QuickSortJava(10)
         sorts << quickSortJava
-        def mergeSort = new MergeSort(100000)
+        /*
+        def mergeSort = new MergeSort(10)
         sorts << mergeSort
-        def mergeSortJava = new MergeSortJava(100000)
+        def mergeSortJava = new MergeSortJava(10)
         sorts << mergeSortJava
-        def heapSort = new HeapSort(100000)
+        */
+        def heapSort = new HeapSort(10)
         sorts << heapSort
 
-        def all = r.generateList(100000)
+        def all = r.generateList(10)
         def temp
-        def bubble = r.generateList(100)
+        def bubble = r.generateList(1)
         //println(all)
         def i = 0
         sorts.each {

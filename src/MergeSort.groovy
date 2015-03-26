@@ -26,6 +26,7 @@ class MergeSort extends SortMethod {
 
             // Intertwine the data into one sorted list.
             mergeLists(data, start, middle, end);
+            report.addComparisons(1)
         }
 
     }

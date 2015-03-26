@@ -14,6 +14,9 @@ class BubbleSort extends SortMethod {
     }
 
     def sortM(a) {
+        if(a.size()< 2) {
+            return a
+        }
         for(out in (a.size()-2)..1)
         {
             0.upto(out) { index ->
@@ -22,9 +25,9 @@ class BubbleSort extends SortMethod {
                     def temp = a[index]
                     a[index] = a[index + 1]
                     a[index + 1] = temp
-                    this.report.addComparisons(3)
-                }
 
+                }
+                report.addComparisons(1)
             }
         }
     }
