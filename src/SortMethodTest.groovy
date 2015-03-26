@@ -20,10 +20,11 @@ class SortMethodTest extends GroovyTestCase{
 
     void aux (sortMethod){
         assertEquals("The list must be sorted",[1,2,3,4,5],sortMethod.sortM(sortList))
+        assertEquals("The list must be sorted",[1,2,3,4,5],sortMethod.sortM(descendList))
     }
 
     void testInitialaze(){
-        def qs = new QuickSort()
-        aux(ms)
+        def hs = new HeapSort(1)
+        aux(hs)
     }
 }
