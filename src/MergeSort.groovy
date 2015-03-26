@@ -1,51 +1,53 @@
 /**
  * Created by sergioalejandrodiazpinilla on 24/03/15.
  */
-class MergeSort {
+class MergeSort extends SortMethod {
     MergeSort(long instanceSize){
         def repo = new Report()
         repo.instanceSize = instanceSize
+        repo.comparasons = 0
         this.report = repo
         this.sortName = "Merge Sort Groovy"
     }
 
-    def merge(A, p, q, r){
-        i = 0
-        j = 0
-        L = A[p..q + 1]
-        R = A[q+1..r+1]
-        for (k in (p..r+1)){
-            if (L[i] <= R[j]) {
-                A[k] = L[i]
-                i++
-            }
-            else {
-                A[k] = R[j]
-                j++
-            }
+    def sortM(list){
+        sort(list, 0, list.size() - 1)
+    }
+
+    def sort(data, start, end) {
+
+        if (end > start) {
+
+            int middle = (int) ((start + end) / 2);
+
+            // Sort the left and right sides separately.
+            sort(data, start, middle);
+            sort(data, middle + 1, end);
+
+            // Intertwine the data into one sorted list.
+            mergeLists(data, start, middle, end);
         }
+
     }
 
-    def merge_sort_main(A, p, r){
-        def q
-        if (p < r){
-            q = (p+r)/2
-            merge_sort_main(A, p, q)
-            merge_sort_main(A, q+1, r)
-            merge( A, p, q, r )
-        }
-    }
-    def merge_sort(A){
-        println "hola"
-        merge_sort_main(A, 0, A.size()-1)
+    def mergeLists(data, start, middle, end) {
+
+        // Copy the left and right arrays because we'll be overwriting them.
+        def left = data[start..(middle + 1)]
+        def right = data[(middle+1)..(end+1)]
+
+        // Now, merge the lists by repeatedly adding the biggest value, from whichever list has it.
+        def i = start, l = 0, r = 0; // l and r are indexes in left and right
+        while (l < left.size() && r < right.size())
+            data[i++] = (left[l] <= right[r]) ? left[l++] : right[r++]
+
+        // Add any leftovers on one side.
+        while (l < left.size())
+            data[i++] = left[l++];
+        while (r < right.size())
+            data[i++] = right[r++];
     }
 
 
-    def static void main(String[] args){
-        def B = [10,4,5,6]
-        println(B)
-        merge_sort(B)
-        println(B)
-    }
 
 }

@@ -1,14 +1,11 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
-/**
- * Created by sergioalejandrodiazpinilla on 24/03/15.
- */
 public class QuickSortJava extends  SortMethod{
 
     public QuickSortJava(long instanceSize){
         Report r = new Report();
         r.setInstanceSize(instanceSize);
+        r.setComparasons(0);
         this.setReport(r);
         this.setSortName("QuickSort Java");
     }
