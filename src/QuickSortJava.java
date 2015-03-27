@@ -1,4 +1,6 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class QuickSortJava extends  SortMethod{
 
@@ -11,17 +13,26 @@ public class QuickSortJava extends  SortMethod{
         ArrayList<Integer>s = (ArrayList<Integer>)list;
         Integer [] A = s.toArray(new Integer[s.size()]);
         this.getReport().setInstanceSize(A.length);
-        int izq = 0;
-        int der = A.length-1;
 
-        quicksort(A, izq, der);
+        if(A.length<2){
+            s = new ArrayList<Integer>(Arrays.asList(A));
+            return s;
+        }else {
 
-        return null;
+            int izq = 0;
+            int der = A.length - 1;
+
+            quicksort(A, izq, der);
+
+            s = new ArrayList<Integer>(Arrays.asList(A));
+
+            return s;
+        }
     }
 
     public  void quicksort(Integer A[], int izq, int der) {
 
-        int pivote=A[izq];
+        int pivote = A[izq];
         int i=izq;
         int j=der;
         int aux;
