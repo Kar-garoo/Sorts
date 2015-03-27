@@ -1,13 +1,21 @@
 /**
- * Created by JuKa on 26/03/2015.
+ * Created by Kar-garoo:
+
+ *Jose Daniel Salazar Mora
+ *Sergio Alejandro Diaz Pinilla
+ *Julian Camilo Mendez Corredor
+ *Miguel Andres Torres Chavarro
  */
+
 class MergeSort extends SortMethod {
     MergeSort(){
         super()
         this.sortName = "Merge Sort Groovy"
     }
 
+
     def sortM(list){
+        report.instanceSize = list.size()
         return sort(list, 0, list.size() - 1)
     }
 
@@ -37,8 +45,9 @@ class MergeSort extends SortMethod {
 
         // Now, merge the lists by repeatedly adding the biggest value, from whichever list has it.
         def i = start, l = 0, r = 0; // l and r are indexes in left and right
-        while (l < left.size() && r < right.size())
-            data[i++] = (left[l] <= right[r]) ? left[l++] : right[r++]
+        while (l < left.size() && r < right.size()){
+            report.addComparisons(1)
+            data[i++] = (left[l] <= right[r]) ? left[l++] : right[r++]}
 
         // Add any leftovers on one side.
         while (l < left.size())
