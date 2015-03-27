@@ -42,7 +42,7 @@ public class MergeSortJava extends SortMethod {
             int i = 0, j = 0, k = 0;
             while(arr1.length != j && arr2.length != k)
             {
-
+                this.getReport().addComparisons(1);
                 if(arr1[j] < arr2[k])
                 {
                     array[i] = arr1[j];
