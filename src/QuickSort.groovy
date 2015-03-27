@@ -16,7 +16,7 @@ class QuickSort extends SortMethod {
     }
 
     def qs(list){
-        if(list.size()< 2) return list
+        if(list.size()<= 1) return list
         def pivot = list[0]
         def items = list.groupBy{ it <=> pivot}.withDefault{[]}
         report.addComparisons(items[0].size()+items[1].size())
