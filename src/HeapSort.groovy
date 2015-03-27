@@ -3,13 +3,14 @@
  */
 class HeapSort extends SortMethod{
 
-    HeapSort(long instanceSize){
+    HeapSort( ){
         def repo = new Report()
-        repo.instanceSize = instanceSize
         this.report = repo
         this.sortName = "HeapSort Groovy"
     }
+
     def sortM(a) {
+        report.instanceSize = a.size()
         def size = a.size()
         if (size < 2) {
             return a

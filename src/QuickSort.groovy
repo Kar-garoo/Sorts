@@ -3,19 +3,23 @@
  */
 class QuickSort extends SortMethod {
 
-    QuickSort(long instanceSize){
+    QuickSort(){
         def repo = new Report()
-        repo.instanceSize = instanceSize
         this.report = repo
         this.sortName = "Quick Sort Groovy"
 
 
     }
     def sortM(list){
+        report.instanceSize = list.size()
+        qs(list)
+
+    }
+
+    def qs(list){
         if(list.size()< 2) return list
         def pivot = list[0]
-        def items = list.groupBy{ it <=> pivot ;report.addComparisons(1)}.withDefault{[]}
-        sortM(items[-1])+items[0]+sortM(items[1])
-
+        def items = list.groupBy{ it <=> pivot}.withDefault{[]}
+        qs(items[-1])+items[0]+qs(items[1])
     }
 }

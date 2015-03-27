@@ -8,11 +8,11 @@ class Runner {
         def r = new Runner()
         def sorts = []
 
-        def bubbleSort = new BubbleSort(1)
+        def bubbleSort = new BubbleSort()
         sorts << bubbleSort
-        def quickSort = new QuickSort(10)
+        def quickSort = new QuickSort()
         sorts << quickSort
-        def quickSortJava = new QuickSortJava(10)
+        def quickSortJava = new QuickSortJava()
         sorts << quickSortJava
         /*
         def mergeSort = new MergeSort(10)
@@ -20,17 +20,17 @@ class Runner {
         def mergeSortJava = new MergeSortJava(10)
         sorts << mergeSortJava
         */
-        def heapSort = new HeapSort(10)
+        def heapSort = new HeapSort()
         sorts << heapSort
 
         def all = r.generateList(10)
         def temp
-        def bubble = r.generateList(1)
+        def bubble = r.generateList(100)
         //println(all)
         def i = 0
         sorts.each {
             temp = all;
-            if(i != 0) {
+            if(it.sortName != "BubbleSort Groovy") {
                 r.timeSort(it, temp)
                 r.printReport(it)
             }else{
@@ -44,11 +44,8 @@ class Runner {
     }
 
     def timeSort(SortMethod method,l){
-        //println (l)
         long start = System.currentTimeMillis()
-
-        method.sortM(l)
-        //println(l)
+        l=method.sortM(l)
         def end = System.currentTimeMillis()
         method.report.time = (end - start)/1000
 

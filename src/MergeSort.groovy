@@ -2,7 +2,7 @@
  * Created by sergioalejandrodiazpinilla on 24/03/15.
  */
 class MergeSort extends SortMethod {
-    MergeSort(long instanceSize){
+    MergeSort(){
         def repo = new Report()
         repo.instanceSize = instanceSize
         repo.comparasons = 0

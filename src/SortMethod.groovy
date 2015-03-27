@@ -6,6 +6,9 @@ abstract class SortMethod {
     String sortName
     Report report
 
+    SortMethod(){
+
+    }
 
     abstract sortM(items)
 }

@@ -2,18 +2,17 @@ import java.util.ArrayList;
 
 public class QuickSortJava extends  SortMethod{
 
-    public QuickSortJava(long instanceSize){
+    public QuickSortJava(){
         Report r = new Report();
-        r.setInstanceSize(instanceSize);
         r.setComparasons(0);
         this.setReport(r);
         this.setSortName("QuickSort Java");
     }
 
     public Object sortM(Object list){
-
         ArrayList<Integer>s = (ArrayList<Integer>)list;
         Integer [] A = s.toArray(new Integer[s.size()]);
+        this.getReport().setInstanceSize(A.length);
         int izq = 0;
         int der = A.length-1;
 

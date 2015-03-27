@@ -5,19 +5,19 @@
 class BubbleSort extends SortMethod {
 
 
-    BubbleSort(long instanceSize){
+    BubbleSort( ){
         def repo = new Report()
-        repo.instanceSize = instanceSize
         repo.comparasons = 0
         this.report = repo
         this.sortName = "BubbleSort Groovy"
     }
 
     def sortM(a) {
+        report.instanceSize = a.size()
         if(a.size()< 2) {
             return a
         }
-        for(out in (a.size()-2)..1)
+        for(out in (a.size()-2)..0)
         {
             0.upto(out) { index ->
                 if(a[index] > a[index+1]){
@@ -30,6 +30,7 @@ class BubbleSort extends SortMethod {
                 report.addComparisons(1)
             }
         }
+        return a
     }
 
 }
