@@ -1,6 +1,12 @@
-/*
- **** Created by Daniel Salazar ****
+/**
+ * Created by Kar-garoo:
+
+ *Jose Daniel Salazar Mora
+ *Sergio Alejandro Diaz Pinilla
+ *Julian Camilo Mendez Corredor
+ *Miguel Andres Torres Chavarro
  */
+
 class BubbleSort extends SortMethod {
 
 
