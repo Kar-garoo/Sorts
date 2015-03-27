@@ -1,6 +1,12 @@
 /**
- * Created by sergioalejandrodiazpinilla on 24/03/15.
+ * Created by Kar-garoo:
+
+ *Jose Daniel Salazar Mora
+ *Sergio Alejandro Diaz Pinilla
+ *Julian Camilo Mendez Corredor
+ *Miguel Andres Torres Chavarro
  */
+
 class MergeSort extends SortMethod {
     MergeSort(){
         super()
