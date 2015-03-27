@@ -39,6 +39,7 @@ public class QuickSortJava extends  SortMethod{
 
         while(i<j){
             while(A[i]<=pivote && i<j) i++;
+
             this.getReport().addComparisons(1);
             while(A[j]>pivote) j--;
             this.getReport().addComparisons(1);
