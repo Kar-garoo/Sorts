@@ -12,6 +12,7 @@ public class MergeSortJava extends SortMethod {
     public Object sortM(Object list){
         ArrayList<Integer> s = (ArrayList<Integer>)list;
         Integer [] A = s.toArray(new Integer[s.size()]);
+        this.getReport().setInstanceSize(A.length);
         mergeSort(A);
         s = new ArrayList<Integer>(Arrays.asList(A));
 
