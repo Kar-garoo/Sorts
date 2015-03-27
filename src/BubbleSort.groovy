@@ -11,7 +11,7 @@ class BubbleSort extends SortMethod {
 
     def sortM(a) {
         report.instanceSize = a.size()
-        if(a.size()<= 1) {
+        if(a.size()< 2) {
             return a
         }
         for(out in (a.size()-2)..0)
