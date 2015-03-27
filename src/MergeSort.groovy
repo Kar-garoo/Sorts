@@ -13,8 +13,9 @@ class MergeSort extends SortMethod {
         this.sortName = "Merge Sort Groovy"
     }
 
+
     def sortM(list){
-        sort(list, 0, list.size() - 1)
+        return sort(list, 0, list.size() - 1)
     }
 
     def sort(data, start, end) {
@@ -29,16 +30,17 @@ class MergeSort extends SortMethod {
 
             // Intertwine the data into one sorted list.
             mergeLists(data, start, middle, end);
-            report.addComparisons(1)
+
         }
+        return data
 
     }
 
     def mergeLists(data, start, middle, end) {
 
         // Copy the left and right arrays because we'll be overwriting them.
-        def left = data[start..(middle + 1)]
-        def right = data[(middle+1)..(end+1)]
+        def left = data[start..(middle)]
+        def right = data[(middle+1)..(end)]
 
         // Now, merge the lists by repeatedly adding the biggest value, from whichever list has it.
         def i = start, l = 0, r = 0; // l and r are indexes in left and right
