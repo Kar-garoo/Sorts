@@ -38,12 +38,12 @@ class SortMethodTest extends GroovyTestCase{
         def qs = new QuickSort()
         aux(qs)
     }
-    /*
+
     void testQuickSortJava(){
         def qsj = new QuickSortJava()
         aux(qsj)
     }
-    */
+
     void testMergeSort(){
         def hs = new HeapSort()
         aux(hs)

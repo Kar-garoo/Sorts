@@ -23,7 +23,7 @@ class Runner {
         def heapSort = new HeapSort()
         sorts << heapSort
 
-        def all = r.generateList(10)
+        def all = r.generateList(100000)
         def temp
         def bubble = r.generateList(100)
         //println(all)

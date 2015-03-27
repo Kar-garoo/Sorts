@@ -42,12 +42,15 @@ class HeapSort extends SortMethod{
 
             if (list[left] > list[max]) {
                 max = left
+
             }
 
             if (right <= last && list[right] > list[max]) {
                 max = right
+
             }
 
+            report.addComparisons(3)
             if (max != parent) {
                 swap(list, parent, max)
                 parent = max
