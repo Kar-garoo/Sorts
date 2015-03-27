@@ -1,55 +1,76 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class MergeSortJava extends SortMethod {
-
-    public Object sortM(Object list){
-        ArrayList<Integer>s = (ArrayList<Integer>)list;
-        System.out.println(s.toString());
-        merge_sort(s);
-        return null;
-    }
-
 
     public MergeSortJava(){
         super();
         this.setSortName("MergeSort Java");
     }
 
-    public static void merge(ArrayList <Integer> A, int p, int q, int r){
-        int i = 0, j = 0;
-        int inf = Integer.MAX_VALUE;
-        ArrayList <Integer> L =  new  ArrayList <Integer> (A.subList(p, q + 1));
-        L.add(inf);
-        ArrayList <Integer> R =  new  ArrayList <Integer> (A.subList(q + 1, r + 1));
-        R.add(inf);
-        for (int k = p; k < r+1 ; k++) {
-            if( L.get(i) <= R.get(j) ){
-                A.remove(k);
-                A.add(k, L.get(i));
+    public Object sortM(Object list){
+        ArrayList<Integer> s = (ArrayList<Integer>)list;
+        Integer [] A = s.toArray(new Integer[s.size()]);
+        mergeSort(A);
+        s = new ArrayList<Integer>(Arrays.asList(A));
+
+        return s;
+    }
+
+    public Integer[] mergeSort(Integer array[])
+
+    {
+
+        if(array.length > 1)
+        {
+
+            int elementsInA1 = array.length / 2;
+            int elementsInA2 = array.length - elementsInA1;
+            Integer arr1[] = new Integer[elementsInA1];
+            Integer arr2[] = new Integer[elementsInA2];
+            for(int i = 0; i < elementsInA1; i++)
+                arr1[i] = array[i];
+
+            for(int i = elementsInA1; i < elementsInA1 + elementsInA2; i++)
+                arr2[i - elementsInA1] = array[i];
+
+            arr1 = mergeSort(arr1);
+            arr2 = mergeSort(arr2);
+
+            int i = 0, j = 0, k = 0;
+            while(arr1.length != j && arr2.length != k)
+            {
+
+                if(arr1[j] < arr2[k])
+                {
+                    array[i] = arr1[j];
+                    i++;
+                    j++;
+                }
+
+                else
+                {
+                    array[i] = arr2[k];
+                    i++;
+                    k++;
+                }
+            }
+
+            while(arr1.length != j)
+            {
+                array[i] = arr1[j];
                 i++;
-            }else{
-                A.remove(k);
-                A.add(k, R.get(j));
                 j++;
             }
+            while(arr2.length != k)
+            {
+                array[i] = arr2[k];
+                i++;
+                k++;
+            }
         }
+        return array;
     }
-
-    public static void merge_sort_main(ArrayList <Integer> A, int p, int r){
-        int q;
-        if (p < r){
-            q = (p+r)/2;
-            merge_sort_main(A, p, q);
-            merge_sort_main(A, q+1, r);
-            merge( A, p, q, r );
-
-        }
-
-    }
-    public static void merge_sort(ArrayList <Integer> A){
-        merge_sort_main(A, 0, A.size()-1);
-    }
-
 
 }

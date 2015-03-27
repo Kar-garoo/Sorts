@@ -1,5 +1,6 @@
 /**
- * Created by sergioalejandrodiazpinilla on 24/03/15.
+ * Kar-garoo
+ *
  */
 abstract class SortMethod {
 

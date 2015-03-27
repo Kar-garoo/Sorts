@@ -1,5 +1,9 @@
 /**
- * Created by sergioalejandrodiazpinilla on 24/03/15.
+ * Created by Kar-garoo
+ * Jose Daniel Salazar Mora
+ *Sergio Alejandro Diaz Pinilla
+ *Julian Camilo Mendez Corredor
+ *Miguel Andres Torres Chavarro
  */
 class Runner {
 
@@ -14,12 +18,13 @@ class Runner {
         sorts << quickSort
         def quickSortJava = new QuickSortJava()
         sorts << quickSortJava
-        /*
-        def mergeSort = new MergeSort(10)
+
+        def mergeSort = new MergeSort()
         sorts << mergeSort
-        def mergeSortJava = new MergeSortJava(10)
+
+        def mergeSortJava = new MergeSortJava()
         sorts << mergeSortJava
-        */
+
         def heapSort = new HeapSort()
         sorts << heapSort
 

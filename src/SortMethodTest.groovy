@@ -45,12 +45,12 @@ class SortMethodTest extends GroovyTestCase{
     }
 
     void testMergeSort(){
-        def hs = new HeapSort()
-        aux(hs)
+        def ms = new MergeSort()
+        aux(ms)
     }
     void testMergeSortJava(){
-        def hs = new HeapSort()
-        aux(hs)
+        def msj = new MergeSortJava()
+        aux(msj)
     }
     void testHeapSort(){
         def hs = new HeapSort()
