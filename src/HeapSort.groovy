@@ -49,7 +49,7 @@ class HeapSort extends SortMethod{
 
             }
 
-            report.addComparisons(3)
+            report.addComparisons(2)
             if (max != parent) {
                 swap(list, parent, max)
                 parent = max
