@@ -7,7 +7,11 @@ abstract class SortMethod {
     Report report
 
     SortMethod(){
-
+        def repo = new Report()
+        this.report = repo
+        repo.setComparasons(0)
+        repo.setInstanceSize(0)
+        repo.setTime(0.0)
     }
 
     abstract sortM(items)

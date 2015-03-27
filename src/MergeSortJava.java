@@ -11,10 +11,8 @@ public class MergeSortJava extends SortMethod {
     }
 
 
-    public MergeSortJava(long instanceSize){
-        Report r = new Report();
-        r.setInstanceSize(instanceSize);
-        this.setReport(r);
+    public MergeSortJava(){
+        super();
         this.setSortName("MergeSort Java");
     }
 

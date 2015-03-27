@@ -4,8 +4,7 @@
 class HeapSort extends SortMethod{
 
     HeapSort( ){
-        def repo = new Report()
-        this.report = repo
+        super()
         this.sortName = "HeapSort Groovy"
     }
 

@@ -4,8 +4,7 @@
 class QuickSort extends SortMethod {
 
     QuickSort(){
-        def repo = new Report()
-        this.report = repo
+        super()
         this.sortName = "Quick Sort Groovy"
 
 

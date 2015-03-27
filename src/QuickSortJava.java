@@ -3,9 +3,7 @@ import java.util.ArrayList;
 public class QuickSortJava extends  SortMethod{
 
     public QuickSortJava(){
-        Report r = new Report();
-        r.setComparasons(0);
-        this.setReport(r);
+        super();
         this.setSortName("QuickSort Java");
     }
 

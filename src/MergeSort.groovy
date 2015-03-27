@@ -3,10 +3,7 @@
  */
 class MergeSort extends SortMethod {
     MergeSort(){
-        def repo = new Report()
-        repo.instanceSize = instanceSize
-        repo.comparasons = 0
-        this.report = repo
+        super()
         this.sortName = "Merge Sort Groovy"
     }
 

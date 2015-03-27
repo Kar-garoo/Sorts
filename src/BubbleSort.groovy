@@ -6,9 +6,7 @@ class BubbleSort extends SortMethod {
 
 
     BubbleSort( ){
-        def repo = new Report()
-        repo.comparasons = 0
-        this.report = repo
+        super()
         this.sortName = "BubbleSort Groovy"
     }
 
