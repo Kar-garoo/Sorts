@@ -49,12 +49,15 @@ public class QuickSortJava extends  SortMethod{
 
         while(i<j){
             while(A[i]<=pivote && i<j) i++;
+
+            this.getReport().addComparisons(1);
             while(A[j]>pivote) j--;
+            this.getReport().addComparisons(1);
             if (i<j) {
                 aux= A[i];
                 A[i]=A[j];
                 A[j]=aux;
-                this.getReport().addComparisons(1);
+
             }
         }
         A[izq]=A[j];
